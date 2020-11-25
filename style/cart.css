@@ -1,0 +1,41 @@
+body {
+  grid-template: 100px minmax(50px, auto) auto minmax(200px, 15%) / 100vw;
+}
+.emptyCart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  font-weight: 700;
+  margin: 15%;
+  grid-row: 2 /3;
+}
+.shopContainer {
+  all: unset;
+  grid-row: 3/4;
+  display: grid;
+  grid-template-columns: minmax(1em, 1fr) auto minmax(1em, 1fr);
+  grid-template-rows: auto 100px;
+}
+.shopItemsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 20%));
+  grid-template-rows: repeat(auto-fit, minmax(250px, 23%));
+  grid-row-gap: 3em;
+  grid-area: 1 / 2/2/3;
+  grid-column-gap: 3rem;
+}
+
+.filtered {
+  display: none;
+}
+.rm {
+  transition: 1s;
+}
+.cart {
+  font-size: 1.2rem;
+}
+
+footer {
+  grid-row: 4/5;
+}

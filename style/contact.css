@@ -1,0 +1,76 @@
+.contactContainer {
+  line-height: 45px;
+}
+#contactForm {
+  width: 400px;
+  margin: 5% auto 10% auto;
+}
+.contactLogoLabel {
+  display: block;
+  line-height: 3.7rem;
+  font-weight: bold;
+  font-size: 65px;
+  margin: 2% auto;
+  width: 30%;
+}
+.contactLabel {
+  color: #1b2d41;
+  font-size: 18px;
+  font-weight: 400;
+}
+.contactTextField {
+  padding: 15px;
+  width: 430px;
+  height: 14px;
+  font-weight: 700;
+  font-size: 14px;
+  color: #051a3f;
+  border: #d8d8d8 2px solid;
+  outline: 0px;
+  background-color: #a5a1a1;
+  transition: border 0.4s;
+}
+.contactTextField:focus {
+  outline: none;
+  border: #051a3f 2px solid;
+  transition: border 0.4s;
+  background-color: #d8d8d8;
+  color: #051a3f;
+}
+.fieldsForm {
+  /* margin: 0px 0px 0px 250px; */
+}
+.contactSubmit {
+  outline: none;
+  position: relative;
+  padding: 10px;
+  width: 200px;
+  height: 50px;
+  background-color: transparent;
+  border: 3px #051a3f solid;
+  left: 250px;
+  color: #1b2d41;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.5s;
+}
+.contactSubmit:hover,
+.contactSubmit:active {
+  color: #f2bb16;
+  padding: 5px;
+  cursor: pointer;
+  border: 3px #f2bb16;
+  background-color: #1b2d41;
+  transition: all 0.5s;
+}
+textarea {
+  width: 443px !important;
+  height: 200px !important;
+  padding: 10px !important;
+}
+
+.sendMsg {
+  position: relative;
+  left: 270px;
+  top: 20px;
+}

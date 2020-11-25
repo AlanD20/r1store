@@ -1,0 +1,652 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  overflow-x: hidden;
+  background-color: #d8d8d8;
+  color: #1b2d41;
+  font-size: 1rem;
+  display: grid;
+  grid-template: 100px auto minmax(200px, 15%) / 100vw;
+  font-family: "Pathway Gothic One Regular";
+}
+/*======================
+      Header
+         1.Menu Bar
+         2.Logo Image
+         3.Bag
+         4.Search bar
+         5.Social Icons
+  ======================*/
+.header {
+  width: 100vw;
+  height: 100px;
+}
+/*======================
+        1.Menu Bar
+  ======================*/
+nav {
+  display: grid;
+  grid-template:
+    auto / auto minmax(65px, 40%) minmax(180px, 20%)
+    minmax(80px, 10%);
+  position: fixed;
+  z-index: 7;
+  width: 100%;
+  background-color: #1b2d41;
+  box-shadow: 2px 2px 25px #1b2d41;
+}
+.listCon {
+}
+.list {
+  list-style-type: none;
+  display: flex;
+}
+.nl {
+  color: #d8d8d8;
+  text-decoration: none;
+  font-size: 2.5em;
+  padding: 0.4em;
+  transition: 0.3s ease-in;
+}
+.nl:hover {
+  background-color: #434d52;
+  color: #f2bb16;
+  transition: 0.6s ease-out;
+  border-radius: 0.5rem;
+}
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.dropdownContent {
+  background-color: #1b2d41;
+  position: absolute;
+  top: 4.9em;
+  list-style-type: none;
+  flex-direction: column;
+  width: 17em;
+  border-radius: 0.5rem;
+  transition: all 0.1s ease-in-out;
+  display: flex;
+  opacity: 0;
+  padding: 0;
+  visibility: hidden;
+  /* Works perfectly in firefox but doesn't work in chrome */
+}
+.dropdownContent .nl {
+  color: #d8d8d8;
+  font-size: 1.5em;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  transition: 0.3s ease-in-out;
+}
+.dropdownContent .nl:hover {
+  background-color: #434d52;
+  color: #f2bb16;
+  border-radius: 0.5rem;
+  transition: 0.9s ease-in-out;
+}
+.dropdown:hover .dropdownContent,
+.dropdown:hover .dropbtn {
+  color: #f2bb16;
+  border-radius: 0.5rem;
+  visibility: visible;
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+}
+.active {
+  font-weight: bold;
+  color: #f2bb16;
+}
+
+/*======================
+    2.Logo image
+  ======================*/
+
+.logoLink {
+  cursor: default;
+  min-width: 65px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.logoImg,
+.logoImgH {
+  width: 65px;
+  padding-top: 6px;
+  position: fixed;
+  cursor: pointer;
+}
+.lls {
+  width: 5px;
+}
+#lionLogo {
+  fill: #d8d8d8;
+  stroke-width: 1px;
+  padding-top: 6px;
+  position: fixed;
+  cursor: pointer;
+}
+#lionLogo:hover .cls-1 {
+  stroke: #f2bb16;
+}
+
+.Nef {
+  transform: scale(1, 1);
+  opacity: 1;
+  transition: all 0.6s;
+}
+.ef {
+  transform: scale(0, 0);
+  opacity: 0;
+  transition: all 0.6s;
+}
+/*======================
+      3.Bag
+  ======================*/
+.searchBarContainer {
+  display: flex;
+  align-self: flex-end;
+  flex-shrink: 3;
+  min-width: 180px;
+}
+.bagIcon {
+  position: relative;
+  text-decoration: none;
+  padding: 10px 10px 0px 0px;
+  background-color: transparent !important;
+}
+.bagImg {
+  width: 30px;
+}
+.bagNumber {
+  position: absolute;
+  top: -10px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+
+/*======================
+    4.Search Bar
+  ======================*/
+
+.searchField {
+  background-color: transparent;
+  color: #d8d8d8;
+  font-size: 26px;
+  height: 100%;
+  align-self: center;
+  border-radius: 0;
+  border: 0px;
+  width: 45%;
+  margin-left: 10%;
+}
+.searchField:hover {
+  color: #f2bb16;
+}
+.searchField:focus,
+.searchField:hover {
+  outline: none;
+}
+/*======================
+    5.Social Icons
+  ======================*/
+.socialContainer {
+  align-self: center;
+  min-width: 80px;
+  justify-self: end;
+}
+.fbImg,
+.igImg {
+  width: 32px;
+  cursor: pointer;
+}
+
+/*====================
+      Body
+        1.Notification & topArrow
+        3.Body Container
+        4.Added to cart & Remove
+  ====================*/
+
+/*======================
+    1.Notification & topArrow
+  ======================*/
+.Notification {
+  color: #1b2d41;
+  font-weight: bold;
+  position: fixed;
+  z-index: 9;
+  margin: 0px auto;
+  opacity: 0;
+  transition: opacity 0.6s;
+  cursor: default;
+  background-color: #efe8ce;
+  font-size: 20px;
+  display: inline;
+  border-radius: 50px;
+  top: 18%;
+  right: 3%;
+  padding: 30px;
+}
+.Notification:hover {
+  opacity: 0;
+}
+.topArrow {
+  background-color: #efe8ce;
+  color: #1b2d41;
+  position: fixed;
+  z-index: 9;
+  border-radius: 100vh;
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 0.4rem 0.7rem;
+  font-weight: 300;
+  right: 1%;
+  bottom: 1%;
+  display: none;
+  opacity: 0;
+  transition: all 0.4s;
+  border: 0px;
+  outline: 0px;
+}
+.topArrow:hover,
+.topArrow:focus {
+  background-color: #1b2d41;
+  color: #f2bb16;
+  transition: all 0.4s;
+  font-weight: 700;
+}
+
+/*======================
+    3.Body Container
+  ======================*/
+.shopContainer {
+  color: #1b2d41;
+  font-size: 20px;
+  display: grid;
+  grid-template-columns: minmax(160px, 15%) minmax(1em, 1fr) minmax(300px, auto) minmax(
+      1em,
+      1fr
+    );
+  grid-template-rows: auto 100px;
+  grid-column-gap: 1rem;
+}
+.leftNav {
+  background-color: #ddd;
+  width: 100%;
+  grid-area: 1/ 1/2 /2;
+}
+.leftNav > ul {
+  list-style-type: none;
+  font-size: 1.5em;
+  line-height: 4rem;
+}
+.leftNav > ul > li {
+  background-color: #eee;
+  padding: 0px 2rem;
+}
+
+.shopItemsContainer {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 23%));
+  grid-template-rows: repeat(auto-fit, minmax(200px, 50%));
+  grid-row-gap: 2em;
+  grid-area: 1 / 2 / span 1 / span 3;
+  grid-column-gap: 1rem;
+}
+.itemContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgTag {
+  width: 100%;
+  border: 1.5px #1b2d41 solid;
+  box-shadow: 1px 1px 3px #1b2d41;
+  margin-bottom: 0.7rem;
+  transition: transform 0.3s ease;
+}
+.imgTag:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.priceTag {
+  display: block;
+  cursor: text;
+  margin: 5px 0px;
+  font-weight: bold;
+  color: #1b2d41;
+}
+.nameTag {
+  display: block;
+  cursor: text;
+  font-weight: bold;
+  text-align: center;
+  color: #1b2d41;
+}
+
+/*========================
+    4.Added to cart & Remove
+  ========================*/
+
+.addBag {
+  color: #1b2d41;
+  transition: 0.7s;
+  font-size: 25px;
+  font-weight: bold;
+  padding: 0.5rem 2rem;
+}
+.addBag:hover {
+  background-color: #1b2d41;
+  color: #f2bb16;
+  transition: 0.4s;
+  cursor: pointer;
+  border-radius: 15px;
+}
+/*======================
+        Footer 
+  ======================*/
+
+#ftrContainer {
+  background-color: #2f4b6b;
+  grid-column: 1/-1;
+  grid-row: 3 /4;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template: 100% / 80% 20%;
+}
+
+.sub {
+  width: 100%;
+  display: grid;
+  grid-template: repeat(11, 20px) / repeat(25, 30px);
+}
+.subLabel {
+  color: #d8d8d8;
+  font-size: 45px;
+  font-weight: 900;
+  grid-column: 2 / span 14;
+  grid-row: 2 / span 4;
+}
+.subField {
+  background-color: #e4e4e4;
+  color: black;
+  border: 0px;
+  box-shadow: 1px 1px 3px black;
+  padding: 8px;
+  font-weight: 700;
+  font-size: 18px;
+  grid-column: 2 / span 13;
+  grid-row: 5 / span 2;
+}
+.subField:focus {
+  outline: none;
+  border: 0px;
+}
+.creator {
+  color: #d8d8d8;
+  font-weight: 400;
+  font-size: 160%;
+  text-align: center;
+  grid-column: 10 / span 60;
+  grid-row: 7 / span 2;
+}
+.clink {
+  text-decoration: none;
+  color: #f2bb16;
+  font-weight: 600;
+  position: relative;
+  z-index: 1;
+}
+.clink::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 10%;
+  background: #f2bb16;
+  opacity: 0;
+  bottom: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: all 250ms ease-in;
+  z-index: -1;
+}
+.clink:hover {
+  color: white;
+}
+.clink:hover::after {
+  opacity: 1;
+  transform: scaleX(1);
+  transform-origin: right;
+  transition: all 250ms ease-in;
+}
+.copyrightLabel {
+  color: #d8d8d8;
+  font-weight: 400;
+  text-align: center;
+  font-size: 160%;
+  grid-column: 10 / span 60;
+  grid-row: 9 / span 2;
+}
+
+.ftrLogo {
+  width: 50%;
+  flex-shrink: 3;
+}
+.ftrlogoContainer {
+  display: flex;
+  grid-column: 2/3;
+  grid-row: 1/2;
+  justify-content: center;
+  align-items: center;
+}
+.ftrlogoLabel {
+  color: #d8d8d8;
+  font-size: 42px;
+  font-weight: bold;
+  margin: 45px 0px 0px 15px;
+}
+
+@media screen and (max-width: 700px) {
+  body {
+    font-size: 0.8rem;
+    display: grid;
+    grid-template: 100px auto minmax(200px, 15%) / 100vw;
+  }
+  .shopContainer {
+    grid-template-columns:
+      minmax(120px, 6%) minmax(1em, 1fr) minmax(300px, auto)
+      minmax(1em, 1fr);
+    grid-template-rows: auto 50px;
+  }
+  .leftNav {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .shopItemsContainer {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 25%));
+  }
+  .header {
+    height: 80px;
+  }
+  /*======================
+          1.Menu Bar
+    ======================*/
+  nav {
+    grid-template:
+      auto / minmax(290px, 350px) minmax(65px, auto) minmax(180px, auto)
+      minmax(80px, auto);
+  }
+  .listCon {
+    position: relative;
+    width: 290px;
+    height: 100%;
+  }
+  .ham,
+  .ham::before,
+  .ham::after {
+    background-color: #d8d8d8;
+    position: absolute;
+    border-radius: 100vh;
+    width: 40px;
+    height: 4px;
+    left: 0;
+    bottom: 0;
+
+    transition: all 350ms;
+  }
+  .ham::before,
+  .ham::after {
+    content: "";
+  }
+  .ham {
+    bottom: 20px;
+    left: 45px;
+  }
+  .ham::before {
+    bottom: 8px;
+  }
+  .ham::after {
+    bottom: -8px;
+  }
+  .open .ham {
+    transform: rotate(90deg) translateY(-50px);
+    background-color: transparent;
+    transition: all 350ms;
+  }
+  .open .ham::before {
+    background-color: #f2bb16;
+    transform: rotate(24deg);
+  }
+  .open .ham::after {
+    background-color: #f2bb16;
+    transform: rotate(-24deg);
+  }
+  .list {
+    position: absolute;
+    border-bottom-left-radius: 3vh;
+    border-bottom-right-radius: 3vh;
+    background-color: #1b2d41;
+    top: 100%;
+    left: 75px;
+    flex-direction: column;
+    width: 200px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 350ms;
+  }
+  .open .list {
+    visibility: visible;
+    opacity: 1;
+    transition: all 350ms;
+  }
+  .nl,
+  .dropdownContent .nl {
+    font-size: 1.5rem;
+    padding: 0.7rem;
+  }
+
+  .dropdownContent {
+    top: -5px;
+    width: 250px;
+    left: 200px;
+  }
+  .active {
+    font-weight: 700;
+  }
+  /*======================
+        3.Bag
+    ======================*/
+  .searchBarContainer {
+    align-self: center;
+    flex-shrink: 3;
+  }
+  .bagIcon {
+    padding: 0.7rem 0.5rem 0px 0.7rem;
+    background-color: transparent !important;
+  }
+  .bagImg {
+    width: 30px;
+    margin: 0.3rem;
+  }
+  .bagNumber {
+    top: 0;
+    font-weight: 400;
+    font-size: 1.5rem;
+  }
+
+  /*======================
+      4.Search Bar
+    ======================*/
+
+  .searchField {
+    font-size: 1rem;
+    width: 35%;
+    margin-left: 1.3rem;
+  }
+  /*======================
+      Footer
+    ======================*/
+  #ftrContainer {
+    display: grid;
+    grid-template: 100% / 80% 20%;
+  }
+
+  .sub {
+    grid-template: repeat(12, 20px) / repeat(25, 20px);
+  }
+  .subLabel {
+    font-size: 2rem;
+    font-weight: 500;
+    grid-column: 2 / span 14;
+    grid-row: 2 / span 4;
+  }
+  .subField {
+    padding: 0.4rem;
+    font-weight: 200;
+    font-size: 1rem;
+    grid-column: 2 / span 13;
+    grid-row: 4 / span 2;
+  }
+  .creator {
+    font-weight: 500;
+    font-size: 1.4rem;
+    text-align: left;
+    grid-column: 4 / span 15;
+    grid-row: 7 / span 2;
+  }
+  .clink {
+    font-weight: 400;
+  }
+  .copyrightLabel {
+    font-size: 1.4rem;
+    text-align: left;
+    grid-column: 4 / span 18;
+    grid-row: 10 / span 2;
+  }
+
+  .ftrLogo {
+    width: 50%;
+    flex-shrink: 3;
+  }
+  .ftrlogoLabel {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+}

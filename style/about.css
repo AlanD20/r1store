@@ -1,0 +1,53 @@
+.aboutContainer {
+  display: flex;
+  flex-direction: row;
+  padding: 2.5rem;
+}
+.aboutImg {
+  min-width: 250px;
+  height: 250px;
+  margin: 0px 0.2rem 0px 1rem;
+}
+.textAbout {
+  margin-top: 5.5rem;
+  margin-left: 2rem;
+  word-spacing: 3px;
+  font-size: 2em;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.textAbout::before {
+  content: "About Us";
+  text-transform: capitalize;
+  font-size: 2.5em;
+  font-weight: bold;
+}
+
+.aboutLink {
+  margin: -2rem 0 0 10rem;
+  color: #2f4b6b;
+  font-size: 2rem;
+}
+.aboutLink:hover {
+  color: #434d52;
+}
+h2 {
+  margin-bottom: 1rem;
+}
+.creatorAbout {
+  display: inline;
+  width: 25%;
+}
+
+footer {
+  grid-row: 4/5;
+}
+@media screen and (max-width: 700px) {
+  .aboutImg {
+    all: unset;
+    min-width: 20%;
+    max-height: 100px;
+    flex: 6 1 100%;
+  }
+}
