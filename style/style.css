@@ -367,7 +367,6 @@ nav {
   width: 100%;
   display: flex;
   flex-flow: row wrap;
-  height: 100%;
 }
 #ftrContainer > * {
   flex: 1 1 calc(calc(250px - 100%) * 998);
@@ -390,7 +389,7 @@ nav {
 .subField {
   background-color: #e4e4e4;
   height: 50px;
-  flex: 1 2 270px;
+  flex: 1 2 340px;
   color: black;
   border: 0px;
   box-shadow: 1px 1px 3px black;
@@ -417,7 +416,7 @@ nav {
   font-size: 160%;
   text-align: center;
   justify-self: flex-end;
-  flex: 2 1 300px;
+  flex: 2 1 350px;
 }
 .copyrightLabel {
   font-size: 160%;
