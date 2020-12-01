@@ -11,7 +11,7 @@ body {
   color: #1b2d41;
   font-size: 1rem;
   display: grid;
-  grid-template: 100px auto minmax(200px, 15%) / 100vw;
+  grid-template: 100px auto minmax(200px, 15%) / auto;
   font-family: "Pathway Gothic One Regular";
 }
 /*======================
@@ -23,7 +23,7 @@ body {
          5.Social Icons
   ======================*/
 .header {
-  width: 100vw;
+  width: auto;
   height: 100px;
 }
 /*======================
@@ -295,24 +295,25 @@ nav {
 }
 
 .shopItemsContainer {
-  display: grid;
+  display: flex;
+  flex-flow: row wrap;
+  grid-area: 1/3/2/4;
   width: 100%;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 23%));
-  grid-template-rows: repeat(auto-fit, minmax(200px, 50%));
-  grid-row-gap: 2em;
-  grid-area: 1 / 2 / span 1 / span 3;
-  grid-column-gap: 1rem;
+  gap: 1rem;
+}
+.shopItemsContainer > * {
+  flex: 1 4 280px;
 }
 .itemContainer {
   width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-flow: column;
   justify-content: center;
   align-items: center;
 }
 
 .imgTag {
-  width: 100%;
+  width: 280px;
   border: 1.5px #1b2d41 solid;
   box-shadow: 1px 1px 3px #1b2d41;
   margin-bottom: 0.7rem;
@@ -362,49 +363,66 @@ nav {
 
 #ftrContainer {
   background-color: #2f4b6b;
-  grid-column: 1/-1;
-  grid-row: 3 /4;
+  grid-area: 3/1/4/-1;
   width: 100%;
-  height: 100%;
-  display: grid;
-  grid-template: 100% / 80% 20%;
+  display: flex;
+  flex-flow: row wrap;
+}
+#ftrContainer > * {
+  flex: 1 1 calc(calc(250px - 100%) * 998);
 }
 
 .sub {
-  width: 100%;
-  display: grid;
-  grid-template: repeat(11, 20px) / repeat(25, 30px);
+  display: flex;
+  flex-flow: row wrap;
+  margin: 1.5rem 2rem;
+  gap: 1rem;
+  width: 500px;
+  order: 1;
+  align-content: flex-start;
 }
 .subLabel {
   color: #d8d8d8;
   font-size: 45px;
   font-weight: 900;
-  grid-column: 2 / span 14;
-  grid-row: 2 / span 4;
 }
 .subField {
   background-color: #e4e4e4;
+  height: 50px;
+  flex: 1 2 270px;
   color: black;
   border: 0px;
   box-shadow: 1px 1px 3px black;
   padding: 8px;
   font-weight: 700;
   font-size: 18px;
-  grid-column: 2 / span 13;
-  grid-row: 5 / span 2;
 }
 .subField:focus {
   outline: none;
   border: 0px;
 }
-.creator {
+.ftrtexts {
+  display: flex;
+  flex-flow: row wrap;
+  width: 400px;
+  align-content: flex-end;
+  order: 2;
+  margin-bottom: 2rem;
+}
+.creator,
+.copyrightLabel {
   color: #d8d8d8;
   font-weight: 400;
   font-size: 160%;
   text-align: center;
-  grid-column: 10 / span 60;
-  grid-row: 7 / span 2;
+  justify-self: flex-end;
+  flex: 2 1 300px;
 }
+.copyrightLabel {
+  font-size: 160%;
+  flex-basis: 400px;
+}
+
 .clink {
   text-decoration: none;
   color: #f2bb16;
@@ -435,25 +453,18 @@ nav {
   transform-origin: right;
   transition: all 250ms ease-in;
 }
-.copyrightLabel {
-  color: #d8d8d8;
-  font-weight: 400;
-  text-align: center;
-  font-size: 160%;
-  grid-column: 10 / span 60;
-  grid-row: 9 / span 2;
-}
 
 .ftrLogo {
-  width: 50%;
-  flex-shrink: 3;
+  width: min(30%, 100px);
 }
 .ftrlogoContainer {
   display: flex;
   grid-column: 2/3;
   grid-row: 1/2;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
+  order: 3;
+  margin-right: 2rem;
 }
 .ftrlogoLabel {
   color: #d8d8d8;
@@ -462,25 +473,34 @@ nav {
   margin: 45px 0px 0px 15px;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 720px) {
   body {
     font-size: 0.8rem;
     display: grid;
-    grid-template: 100px auto minmax(200px, 15%) / 100vw;
+    grid-template: 100px auto minmax(200px, 15%) / auto;
   }
   .shopContainer {
-    grid-template-columns:
-      minmax(120px, 6%) minmax(1em, 1fr) minmax(300px, auto)
-      minmax(1em, 1fr);
-    grid-template-rows: auto 50px;
+    all: unset;
+    grid-row: 2/3;
+    display: flex;
+    width: 100%;
+    flex-flow: row wrap;
+    flex: 1 1 calc(calc(200px - 100%) * 9999);
+    margin-bottom: 100px;
+  }
+  .shopItemsContainer {
+    grid-area: 1 / 2/2/3;
+    display: flex;
+    flex-flow: row wrap;
+    flex: 1 1 calc(calc(200px - 100%) * 9999);
+    width: 100%;
+  }
+  .shopItemsContainer > * {
+    font-size: 1.4rem;
   }
   .leftNav {
     width: 100%;
     font-size: 1rem;
-  }
-
-  .shopItemsContainer {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 25%));
   }
   .header {
     height: 80px;
@@ -490,13 +510,14 @@ nav {
     ======================*/
   nav {
     grid-template:
-      auto / minmax(290px, 350px) minmax(65px, auto) minmax(180px, auto)
+      60px / minmax(65px, auto) minmax(180px, auto) minmax(150px, 200px)
       minmax(80px, auto);
   }
   .listCon {
     position: relative;
-    width: 290px;
+    width: 150px;
     height: 100%;
+    grid-area: 1/-2/2/-3;
   }
   .ham,
   .ham::before,
@@ -504,7 +525,7 @@ nav {
     background-color: #d8d8d8;
     position: absolute;
     border-radius: 100vh;
-    width: 40px;
+    width: 55px;
     height: 4px;
     left: 0;
     bottom: 0;
@@ -514,6 +535,8 @@ nav {
   .ham::before,
   .ham::after {
     content: "";
+    width: 40px;
+    transform: translateX(7px);
   }
   .ham {
     bottom: 20px;
@@ -526,17 +549,19 @@ nav {
     bottom: -8px;
   }
   .open .ham {
-    transform: rotate(90deg) translateY(-50px);
+    transform: rotate(360deg);
+    width: 28px;
     background-color: transparent;
     transition: all 350ms;
   }
   .open .ham::before {
     background-color: #f2bb16;
-    transform: rotate(24deg);
+    width: 40px;
+    transform: rotate(42deg) translate(13px, -6px);
   }
   .open .ham::after {
     background-color: #f2bb16;
-    transform: rotate(-24deg);
+    transform: rotate(135deg) translateX(-18px);
   }
   .list {
     position: absolute;
@@ -544,7 +569,7 @@ nav {
     border-bottom-right-radius: 3vh;
     background-color: #1b2d41;
     top: 100%;
-    left: 75px;
+    left: 40px;
     flex-direction: column;
     width: 200px;
     visibility: hidden;
@@ -565,17 +590,22 @@ nav {
   .dropdownContent {
     top: -5px;
     width: 250px;
-    left: 200px;
+    right: 200px;
   }
   .active {
     font-weight: 700;
+  }
+  .logoLink {
+    grid-area: 1/1/2/2;
+    margin-right: 1rem;
   }
   /*======================
         3.Bag
     ======================*/
   .searchBarContainer {
-    align-self: center;
+    align-self: end;
     flex-shrink: 3;
+    grid-area: 1/2/3/2;
   }
   .bagIcon {
     padding: 0.7rem 0.5rem 0px 0.7rem;
@@ -600,50 +630,63 @@ nav {
     width: 35%;
     margin-left: 1.3rem;
   }
+
+  .socialContainer {
+    grid-area: 1/-1/2/-2;
+    align-self: end;
+  }
+
+  .imgTag {
+    width: min(200px, 70%);
+  }
+  .leftNav {
+    display: none;
+  }
+
+  .itemContainer {
+    width: min(300px, 70%);
+  }
   /*======================
       Footer
     ======================*/
   #ftrContainer {
-    display: grid;
-    grid-template: 100% / 80% 20%;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 0.5rem;
+  }
+  #ftrContainer > * {
+    flex: 1 1 calc(calc(250px - 100%) * 999);
   }
 
   .sub {
-    grid-template: repeat(12, 20px) / repeat(25, 20px);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
   }
   .subLabel {
     font-size: 2rem;
     font-weight: 500;
-    grid-column: 2 / span 14;
-    grid-row: 2 / span 4;
   }
   .subField {
     padding: 0.4rem;
     font-weight: 200;
     font-size: 1rem;
-    grid-column: 2 / span 13;
-    grid-row: 4 / span 2;
+    width: min(100px, 20%);
   }
-  .creator {
+  .ftrtexts {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  .creator,
+  .copyrightLabel {
     font-weight: 500;
     font-size: 1.4rem;
-    text-align: left;
-    grid-column: 4 / span 15;
-    grid-row: 7 / span 2;
   }
   .clink {
     font-weight: 400;
-  }
-  .copyrightLabel {
-    font-size: 1.4rem;
-    text-align: left;
-    grid-column: 4 / span 18;
-    grid-row: 10 / span 2;
-  }
-
-  .ftrLogo {
-    width: 50%;
-    flex-shrink: 3;
   }
   .ftrlogoLabel {
     font-size: 2rem;

@@ -1,5 +1,5 @@
 body {
-  grid-template: 100px minmax(50px, auto) auto minmax(200px, 15%) / 100vw;
+  grid-template: 100px minmax(50px, auto) auto minmax(200px, 15%) / 100%;
 }
 .emptyCart {
   display: flex;
@@ -11,19 +11,7 @@ body {
   grid-row: 2 /3;
 }
 .shopContainer {
-  all: unset;
   grid-row: 3/4;
-  display: grid;
-  grid-template-columns: minmax(1em, 1fr) auto minmax(1em, 1fr);
-  grid-template-rows: auto 100px;
-}
-.shopItemsContainer {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 20%));
-  grid-template-rows: repeat(auto-fit, minmax(250px, 23%));
-  grid-row-gap: 3em;
-  grid-area: 1 / 2/2/3;
-  grid-column-gap: 3rem;
 }
 
 .filtered {
