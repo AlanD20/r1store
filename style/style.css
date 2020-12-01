@@ -414,7 +414,7 @@ nav {
   color: #d8d8d8;
   font-weight: 400;
   font-size: 160%;
-  text-align: center;
+  text-align: right;
   justify-self: flex-end;
   flex: 2 1 350px;
 }
