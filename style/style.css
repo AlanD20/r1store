@@ -5,6 +5,9 @@
   margin: 0;
   padding: 0;
 }
+*.leftNav {
+  visibility: hidden;
+}
 body {
   overflow-x: hidden;
   background-color: #d8d8d8;
@@ -357,6 +360,9 @@ nav {
   cursor: pointer;
   border-radius: 15px;
 }
+.filtered {
+  display: none;
+}
 /*======================
         Footer 
   ======================*/
@@ -367,6 +373,7 @@ nav {
   width: 100%;
   display: flex;
   flex-flow: row wrap;
+  height: 100%;
 }
 #ftrContainer > * {
   flex: 1 1 calc(calc(250px - 100%) * 998);
@@ -414,7 +421,7 @@ nav {
   color: #d8d8d8;
   font-weight: 400;
   font-size: 160%;
-  text-align: right;
+  text-align: center;
   justify-self: flex-end;
   flex: 2 1 350px;
 }

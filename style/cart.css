@@ -13,10 +13,6 @@ body {
 .shopContainer {
   grid-row: 3/4;
 }
-
-.filtered {
-  display: none;
-}
 .rm {
   transition: 1s;
 }

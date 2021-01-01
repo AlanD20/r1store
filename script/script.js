@@ -94,12 +94,11 @@ if(checking != true)
 
 
 ///////////////-----SEARCH FIELD-----///////////////
-const btn = document.querySelector('.searchField');
+const searchField = document.querySelector('.searchField');
 
 
 const findItem = textFieldBar =>{
-    Array.from(list.children)
-    .forEach(item =>{
+    Array.from(list.children).forEach(item =>{
         if(item.childNodes[3].innerText.toLowerCase().includes(textFieldBar) || item.childNodes[5].innerText.toLowerCase().includes(textFieldBar))
         {
             item.classList.remove('filtered');
@@ -110,9 +109,9 @@ const findItem = textFieldBar =>{
 };
 
 
-btn.addEventListener('keyup',e=>{
-    const newBtn = btn.value.toLowerCase().trim();
-    findItem(newBtn);
+searchField.addEventListener('keyup',e=>{
+    const newSearchField = searchField.value.toLowerCase().trim();
+    findItem(newSearchField);
 });
 ///////////////-----END OF SEARCH FIELD-----///////////////
 
