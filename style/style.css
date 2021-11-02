@@ -361,7 +361,7 @@ nav {
   border-radius: 15px;
 }
 .filtered {
-  display: none;
+  display: none !important;
 }
 /*======================
         Footer 
