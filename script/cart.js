@@ -5,11 +5,11 @@ const removeItemFromCart = document.getElementsByClassName('rm');
 
 if(parseItemFromLocal.length >0)
 {
-    emptyTextCart.classList.add('filtered');
+    emptyTextCart.classList.remove('filtered');
 parseItemFromLocal.forEach(item=>cartBodyHTMLTags += itemInBag(item.img, item.name, item.price));
 }
 else{
-    emptyTextCart.classList.remove('filtered');
+    emptyTextCart.classList.add('filtered');
 }
 
 cartContent.innerHTML += cartBodyHTMLTags;
