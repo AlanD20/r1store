@@ -3,7 +3,7 @@ const removeItemFromCart = document.getElementsByClassName('rm');
     let cartBodyHTMLTags = "";
     let emptyTextCart = document.querySelector('.emptyCart');
 
-if(newItemToCart.length >0)
+if(parseItemFromLocal.length >0)
 {
     emptyTextCart.classList.add('filtered');
 parseItemFromLocal.forEach(item=>cartBodyHTMLTags += itemInBag(item.img, item.name, item.price));
